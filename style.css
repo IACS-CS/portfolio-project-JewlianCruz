@@ -1,55 +1,172 @@
-/* There's some sample CSS here which you can use or nuke as you like */
-
+/* General Styles */
 html {
-  /* Make #id links scroll smoothly */
   scroll-behavior: smooth;
 }
 
 body {
-  /* Change to something you like, but please do customize the font! */
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
   line-height: 1.4;
-  /* reset default margins */
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background-color: #f1f1f1; /* Soft light background */
+  color: #333; /* Dark text for contrast */
 }
 
+/* Hero Section */
 .hero {
-  box-sizing: border-box;
-  /* Full screen hero section */
   width: 100%;
   height: 100dvh;
-  /* Center the content vertically and horizontally */
   display: grid;
   place-content: center;
-  /* Custom text and stuff */
-  background: #0033a0;
-  color: white;
-  font-family: Futura;
+  background: url('sunnyset.jpg') no-repeat center center/cover; /* Background Image */
+  color: #fff;
+  font-family: 'Impact', sans-serif; /* Bold font, like boxing posters */
   font-weight: bold;
   font-size: 70px;
   text-align: center;
+  border: 5px solid #ff7f00; /* Orange border */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease-in-out;
 }
+
 .hero a {
-  color: white;
+  color: #ff7f00; /* Sunset orange */
   text-decoration: underline;
-  text-decoration-color: #c6093b;
+  text-decoration-color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-/* A little "activation" to demonstrate JS is working in the template */
-.hero {
-  transition: background 0.5s;
-}
-.hero.active {
-  background: #c6093b;
+/* Adjust hover effects */
+.hero:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
+/* Ensure that only the text link is affected */
+.hero a:hover {
+  color: white;
+  text-decoration-color: #fff;
+}
+
+/* Optional: Soft overlay for the text area on hover, but not for the entire background */
+.hero .text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 127, 0, 0.3); /* Light orange overlay for the text */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero:hover .text-overlay {
+  opacity: 1;
+}
+
+/* Main Content */
 main {
-  /* Make sure our content can scroll the hero away */
   min-height: 100dvh;
-  max-width: 35em; /* choose a width for text */
-  line-height: 1.8; /* choose a line spacing */
-  font-size: 18px; /* choose a font size */
-  margin: 0 auto; /* center the content */
+  max-width: 35em;
+  line-height: 1.8;
+  font-size: 18px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+main:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+  transform: translateY(-5px);
+}
+
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.project-card {
+  background: #ffdd00; /* Bright yellow, like a sunny day */
+  color: #333;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid #ff7f00; /* Orange border */
+  position: relative;
+}
+
+.project-card h3, .project-card p {
+  font-weight: bold;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+.project-card h3 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: 'Impact', sans-serif;
+}
+
+.project-card p {
+  font-size: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.project-card a {
+  color: #ff7f00; /* Sunset orange */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+  color: #fff;
+}
+
+/* Scroll animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projects .project-card {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Button Styling */
+.button {
+  background-color: #ff7f00; /* Sunset orange */
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Impact', sans-serif;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 2px solid #fff;
+}
+
+.button:hover {
+  background-color: #ff9e3a; /* Lighter orange for hover effect */
+  transform: translateY(-2px);
 }
