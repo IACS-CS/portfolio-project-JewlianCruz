@@ -13,27 +13,42 @@
       <div id="hero-section" class="slide active">
         <section class="hero">
           <h1>Jewlian Gendron Portfolio</h1>
-          <a href="#" id="learn-more-btn" class="cta">Learn More</a>
+          <button id="learn-more-btn" class="cta">Learn More</button>
         </section>
       </div>
 
       <!-- About Me Section -->
       <div id="about-me-section" class="slide">
-        <button class="go-back-btn" id="go-back-about">Go Back</button>
+        <button class="go-back-btn">Go Back</button>
         <section class="about-me">
           <h2>About Me</h2>
           <p>
             I am from Lowell, Massachusetts, and I will be 18 on January 28th, 2025. 
             I enjoy putting my skills into things I'm not familiar with, like this project. 
             My goal is to show my talents by coding this project the way I want it, showcasing some code I've done previously.
+            Some intresting things about me; I have a strong passion to become a electrician and eventually go to trade school
+            in August 2025, and learn to work for 4 years. After I get my certifcate my plan is to become a licensed 
+            independent contractor and or a journeyman electrician. Some other cool hobbies I enjoy is boxing, I've been a fan
+            of this sport since I was 3 years old. Actually there is a video of me on youtube fighting with my stepfather in the ring: 
+            search up jewlian gendron and cariana gendron: cariana is my older sister. Boxing has been a passion of mine for a long time, 
+            I have boxed for 5 years and so gratful to understand and know the fundementals; dream was to become a professional boxer, but
+            thats okay, I still love it. As a growing adult I plan to work closer to become a man for myself and for my family, I plan to
+            grow my knowledge to a very high standered to become the man I've dreamed to be. My plan for 2025 is to working as much as I can
+            as a 17 year old, and save as much as I can for a reliable car; luckily I do feel blessed to have to work for my own things like 
+            this because it teaches me to work harder for my desires. Once I get this car and once I recieve my diploma, I'll go to trade
+            school, and by late 2026-2027, I would love to have my own home, with my future wife Adriana Romero, and out future dogs. I'm a 
+            young man who had to teach himself to become a man, a young man who didn't have a male figure to look up too. This motivates me 
+            to become something, to be looked as a independent hard working male. After all, I won't recieve this without God and Jesus Christ, 
+            my goal and desire before any of these wants, is to build a relationship with both and live in his name, after all I will leave this earth
+            with nothing but my relationship with the LORD. Thank you for listening! 
           </p>
-          <a href="#" id="to-projects-btn" class="button">Click Here</a>
+          <button id="to-projects-btn" class="button">See My Projects</button>
         </section>
       </div>
 
       <!-- Projects Section -->
       <div id="projects-section" class="slide">
-        <button class="go-back-btn" id="go-back-projects">Go Back</button>
+        <button class="go-back-btn">Go Back</button>
         <section class="projects">
           <h2>My Projects</h2>
           <div class="project-card">
@@ -50,6 +65,24 @@
       </div>
     </div>
 
-    <script src="main.js"></script>
+    <script>
+      // Select slides and buttons
+      const slides = document.querySelectorAll('.slide');
+      const learnMoreBtn = document.getElementById('learn-more-btn');
+      const toProjectsBtn = document.getElementById('to-projects-btn');
+      const goBackBtns = document.querySelectorAll('.go-back-btn');
+
+      // Move to the specified slide
+      const goToSlide = (currentSlide, nextSlide) => {
+        slides[currentSlide].classList.remove('active');
+        slides[nextSlide].classList.add('active');
+      };
+
+      // Button handlers
+      learnMoreBtn.addEventListener('click', () => goToSlide(0, 1)); // From Hero to About Me
+      toProjectsBtn.addEventListener('click', () => goToSlide(1, 2)); // From About Me to Projects
+      goBackBtns[0].addEventListener('click', () => goToSlide(1, 0)); // Back to Hero
+      goBackBtns[1].addEventListener('click', () => goToSlide(2, 1)); // Back to About Me
+    </script>
   </body>
 </html>
