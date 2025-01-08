@@ -84,12 +84,12 @@ html, body {
 .about-me, .projects {
   width: 80%;
   height: 80%;
-  background-color: #fff; /* Fallback color in case the image doesn't load */
+  background-color: #fff; 
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   padding: 2rem;
   overflow-y: auto;
-  background: url('electric.jpg') no-repeat center center/cover; /* Replace 'about-me-bg.jpg' with your image file */
+  background: url('electric.jpg') no-repeat center center/cover; 
 }
 
 /* Projects Section Specific Styling */
@@ -103,8 +103,12 @@ html, body {
 
 /* Additional Projects Section Background */
 .projects {
-  background: url('') no-repeat center center/cover; /* Replace 'projects-bg.jpg' with your image file */
+  background: url('workingguys.jpg') no-repeat center center;
+  background-size: 50%; /* Shrinks the image down */
+  background-position: center center;
+  background-attachment: fixed; /* Optional: Keeps the image fixed while scrolling */
 }
+
 .about-me p {
   background-color: #ffffff; /* White background */
   color: #000000; /* Black text */
@@ -113,5 +117,6 @@ html, body {
   display: inlin-block; /* Ensures the background wraps tightly around the text */
   box-shadow: 0 px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for better visibility */
   font-family: crsive;
-  font-size: lare;
+  font-size: large;
+  background-size: 50%; 
 }
