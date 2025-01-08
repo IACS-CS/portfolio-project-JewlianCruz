@@ -90,15 +90,15 @@ html, body {
   padding: 2rem;
   overflow-y: auto;
   background: url('electric.jpg') no-repeat center center/cover; 
+  font-family: cursive;
 }
 
 /* Projects Section Specific Styling */
 .projects .project-card {
   margin: 1rem 0;
-  background: #ffdd00; /* Bright yellow card background */
-  padding: 1rem;
+  background: #e30202; 
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px rgba(255, 246, 246, 0.4);
 }
 
 /* Additional Projects Section Background */
@@ -119,4 +119,5 @@ html, body {
   font-family: crsive;
   font-size: large;
   background-size: 50%; 
+  font-family: cursive;
 }
